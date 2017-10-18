@@ -1,0 +1,35 @@
+from gdsCAD import *
+from math import *
+cell=core.Cell('TOP')
+for i in range (0,10):
+    for n in range (0,10-i):
+        
+        x=(i*2.5 *sqrt(3)+n*5*sqrt(3))
+        y=(i*7.5)
+        circ=shapes.Circle((x,y),2.5,0.1,layer=2)
+        cell.add(circ)
+top = core.Cell('TOP')
+
+s1 = core.CellReference(cell)
+top.add(s1)
+
+
+s2 = core.CellReference(cell, origin=(0,0), rotation=60)
+top.add(s2)
+
+s3=core.CellReference(cell, origin=(0,0), rotation=120)
+top.add(s3)
+
+s4=core.CellReference(cell, origin=(0,0), rotation=180)
+top.add(s4)
+
+s5=core.CellReference(cell, origin=(0,0), rotation=240)
+top.add(s5)
+
+s6=core.CellReference(cell, origin=(0,0), rotation=300)
+top.add(s6)
+
+s7=core.CellReference(cell, origin=(0,0), rotation=360)
+top.add(s7)
+
+top.show().figure.savefig('a.pdf')
