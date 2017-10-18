@@ -33,4 +33,3 @@ s7=core.CellReference(cell, origin=(0,0), rotation=360)
 top.add(s7)
 
 top.show().figure.savefig('a.pdf')
-//![array](C:\Users\Administrator\Desktop\jupyter\a.png)
